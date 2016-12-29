@@ -8,7 +8,7 @@
     "build:watch": "npm run build -- -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node dist/app.js",
-    "serve:watch": "nodemon --watch dist dist/app.js",    
+    "serve:watch": "nodemon --watch dist dist/app.js",
     "start": "npm run build && npm run serve",
     "start:watch": "npm run build:watch & npm run serve:watch & wait",
     "dev": "npm run build && npm run start:watch"
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^6.0.54",
+    "@types/restify": "^2.0.35",
     "nodemon": "^1.11.0"
   }
 }

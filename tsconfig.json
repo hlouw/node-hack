@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
         "outDir": "./dist",
-        "target": "es5"
+        "target": "es5",
+        "strictNullChecks": true,
+        "noImplicitAny": true
     },
     "include": [
         "./src/**/*"

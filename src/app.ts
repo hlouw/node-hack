@@ -1,11 +1,11 @@
-var restify = require('restify');
+import * as restify from 'restify';
 
-function respond(req, res, next) {
+const respond: restify.RequestHandler = (req, res, next) => {
   res.send('hello there, ' + req.params.name);
   next();
 }
 
-var server = restify.createServer();
+const server = restify.createServer();
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
