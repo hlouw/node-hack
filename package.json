@@ -1,13 +1,17 @@
 {
   "name": "node-hack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hack around with Node.js",
   "main": "src/app.js",
   "scripts": {
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:watch": "echo \"Error: no test specified\" && exit 1",
     "serve": "node dist/app.js",
-    "start": "npm run build && npm run serve"
+    "serve:watch": "nodemon --watch dist dist/app.js",    
+    "start": "npm run build && npm run serve",
+    "dev": "npm run build:watch & npm run serve:watch & wait"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,7 @@
     "typescript": "^2.1.4"
   },
   "devDependencies": {
-    "@types/node": "^6.0.54"
+    "@types/node": "^6.0.54",
+    "nodemon": "^1.11.0"
   }
 }
