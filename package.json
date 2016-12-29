@@ -2,8 +2,9 @@
   "name": "node-hack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/hlouw/node-hack/issues"
   },
-  "homepage": "https://github.com/hlouw/node-hack#readme"
+  "homepage": "https://github.com/hlouw/node-hack#readme",
+  "dependencies": {
+    "restify": "^4.3.0"
+  }
 }
