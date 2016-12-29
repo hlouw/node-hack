@@ -1,0 +1,19 @@
+{
+  "name": "node-hack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hlouw/node-hack.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hlouw/node-hack/issues"
+  },
+  "homepage": "https://github.com/hlouw/node-hack#readme"
+}
