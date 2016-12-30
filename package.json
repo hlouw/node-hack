@@ -7,17 +7,14 @@
     "build": "tsc",
     "build:watch": "npm run build -- -w",
     "lint": "tslint --force src/** src/**/*",
-    "unittest": "npm run build && mocha \"built/src/**/*.spec.js\"",
-    "unittest:watch": "npm run build && mocha -w \"built/src/**/*.spec.js\"",
-    "servicetest": "npm run build && mocha \"built/test/**/*.spec.js\"",
-    "servicetest:watch": "npm run build && mocha -w \"built/test/**/*.spec.js\"",
-    "test": "npm run build && mocha \"built/src/**/*.spec.js\" \"built/test/**/*.spec.js\"",
-    "test:watch": "npm run build && mocha -w \"built/src/**/*.spec.js\" \"built/test/**/*.spec.js\"",
-    "serve": "node built/src/app.js",
-    "serve:watch": "nodemon --watch built/src built/src/app.js",
-    "start": "npm run build && npm run serve",
-    "start:watch": "npm run build:watch & npm run test:watch & npm run serve:watch & wait",
-    "dev": "npm run build && npm run start:watch"
+    "servicetest": "mocha --compilers ts:ts-node/register \"test/**/*.spec.ts\"",
+    "test": "mocha --compilers ts:ts-node/register \"src/**/*.spec.ts\"",
+    "test:watch": "npm run test -- -w -R min",
+    "serve": "ts-node src/app.ts",
+    "serve:watch": "nodemon --watch src --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/app.ts",
+    "start": "npm run serve",
+    "start:watch": "npm run serve:watch",
+    "dev": "npm run test:watch & npm run serve:watch & wait"
   },
   "repository": {
     "type": "git",
@@ -43,6 +40,7 @@
     "chai-http": "^3.0.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
+    "ts-node": "^2.0.0",
     "tslint": "^4.2.0"
   }
 }
