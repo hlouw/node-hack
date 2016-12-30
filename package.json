@@ -2,7 +2,7 @@
   "name": "node-hack",
   "version": "1.0.0",
   "description": "Hack around with Node.js",
-  "main": "src/app.js",
+  "main": "src/server.ts",
   "scripts": {
     "build": "tsc",
     "build:watch": "npm run build -- -w",
@@ -10,8 +10,8 @@
     "servicetest": "mocha --compilers ts:ts-node/register \"test/**/*.spec.ts\"",
     "test": "mocha --compilers ts:ts-node/register \"src/**/*.spec.ts\"",
     "test:watch": "npm run test -- -w -R min",
-    "serve": "ts-node src/app.ts",
-    "serve:watch": "nodemon --watch src --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/app.ts",
+    "serve": "ts-node src/server.ts",
+    "serve:watch": "nodemon --watch src --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts",
     "start": "npm run serve",
     "start:watch": "npm run serve:watch",
     "dev": "npm run test:watch & npm run serve:watch & wait"

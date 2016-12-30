@@ -1,9 +1,12 @@
 import chaiHttp = require("chai-http");
 import * as chai from "chai";
-import {server} from "../src/app";
+import { createServer } from "restify";
+import { addRoutes } from "./routes";
 
 const expect = chai.expect;
+const server = createServer();
 
+addRoutes(server);
 chai.use(chaiHttp);
 
 describe("/hello/:name endpoint", () => {
@@ -12,6 +15,15 @@ describe("/hello/:name endpoint", () => {
       .get("/hello/ed")
       .end((err, res) => {
         expect(res).to.have.status(200);
+        done();
+      });
+  });
+
+  it("should 404 when no name is provided", (done) => {
+    chai.request(server)
+      .get("/hello")
+      .end((err, res) => {
+        expect(res).to.have.status(404);
         done();
       });
   });
