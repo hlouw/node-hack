@@ -15,10 +15,10 @@ describe("generateHello()", () => {
   });
 
   it("should generate a welcome message if the name is alphabetic", () => {
-      const name = "Freddie";
-      const result = generateHello(name);
-      expect(result).to.eql({
-        message: "hello Freddie",
-      });
+    const name = "Freddie";
+    const result = generateHello(name);
+    expect(result).to.eql({
+      message: "hello Freddie",
+    });
   });
 });
