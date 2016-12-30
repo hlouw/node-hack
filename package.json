@@ -8,10 +8,11 @@
     "build:watch": "npm run build -- -w",
     "lint": "tslint --force src/** src/**/*",
     "test": "mocha \"built/**/*.spec.js\"",
+    "test:watch": "mocha -w \"built/**/*.spec.js\"",
     "serve": "node built/app.js",
-    "serve:watch": "nodemon --watch built built/src/app.js",
+    "serve:watch": "nodemon --watch built built/app.js",
     "start": "npm run build && npm run serve",
-    "start:watch": "npm run build:watch & npm run serve:watch & wait",
+    "start:watch": "npm run build:watch & npm run test:watch & npm run serve:watch & wait",
     "dev": "npm run build && npm run start:watch"
   },
   "repository": {
