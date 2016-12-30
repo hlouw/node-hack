@@ -8,6 +8,6 @@ export const generateHello = (name: string): Welcome | Error => {
   };
 }
 
-export interface Welcome {
+interface Welcome {
   message: string
 }

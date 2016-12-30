@@ -1,5 +1,5 @@
 import { Server, RequestHandler } from 'restify';
-import { generateHello, Welcome } from './hello';
+import { generateHello } from './hello';
 
 export function addRoutes(server: Server): void {
   server.get('/hello/:name', handleHelloRoute);
