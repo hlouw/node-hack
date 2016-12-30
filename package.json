@@ -7,7 +7,7 @@
     "build": "tsc",
     "build:watch": "npm run build -- -w",
     "lint": "tslint --force src/** src/**/*",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha \"dist/**/*.spec.js\"",
     "serve": "node dist/app.js",
     "serve:watch": "nodemon --watch dist dist/app.js",
     "start": "npm run build && npm run serve",
@@ -29,9 +29,14 @@
     "typescript": "^2.1.4"
   },
   "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.35",
     "@types/node": "^6.0.54",
     "@types/restify": "^2.0.35",
     "nodemon": "^1.11.0",
-    "tslint": "^4.2.0"
+    "tslint": "^4.2.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
   }
 }

@@ -1,9 +1,9 @@
-import { Server, RequestHandler } from 'restify';
-import { generateHello } from './hello';
+import { RequestHandler, Server } from "restify";
+import { generateHello } from "./hello";
 
 export function addRoutes(server: Server): void {
-  server.get('/hello/:name', handleHelloRoute);
-  server.head('/hello/:name', handleHelloRoute);
+  server.get("/hello/:name", handleHelloRoute);
+  server.head("/hello/:name", handleHelloRoute);
 }
 
 const handleHelloRoute: RequestHandler = (req, res) => {
@@ -14,4 +14,4 @@ const handleHelloRoute: RequestHandler = (req, res) => {
   } else {
     res.json(result);
   }
-}
+};
