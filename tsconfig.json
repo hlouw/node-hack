@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-        "outDir": "./dist",
+        "outDir": "./built",
         "target": "es5",
         "strictNullChecks": true,
         "noImplicitAny": true
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./test/**/*"
     ]
 }
