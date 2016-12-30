@@ -1,21 +1,17 @@
 import { Server, RequestHandler } from 'restify';
-import { reallyHandleHello } from './hello';
+import { generateHello, Welcome } from './hello';
 
 export function addRoutes(server: Server): void {
-  server.get('/hello/:name', handleHello);
-  server.head('/hello/:name', handleHello);
+  server.get('/hello/:name', handleHelloRoute);
+  server.head('/hello/:name', handleHelloRoute);
 }
 
-function isError(result: string | Error): result is Error {
-  return (result instanceof Error);
-}
+const handleHelloRoute: RequestHandler = (req, res) => {
+  const result = generateHello(req.params.name);
 
-const handleHello: RequestHandler = (req, res) => {
-  let result = reallyHandleHello(req.params.name);
-
-  if (isError(result)) {
+  if (result instanceof Error) {
     res.send(400, result.message);
   } else {
-    res.send(result);
+    res.json(result);
   }
 }
