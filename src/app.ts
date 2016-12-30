@@ -1,7 +1,7 @@
 import { createServer, Server } from "restify";
 import * as hello from "./hello";
 
-const server: Server = createServer();
+export const server: Server = createServer();
 hello.addRoutes(server);
 
 server.listen(8080, () => {
