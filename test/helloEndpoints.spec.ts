@@ -7,17 +7,30 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe("/hello/:name endpoint", () => {
-  it("should return a welcome message for a name with only alphabetic characters", () => {
+  it("should return a welcome message for a name with only alphabetic characters", (done) => {
     chai.request(server)
       .get("/hello/ed")
-      .then((res) => {
+      .end((err, res) => {
         expect(res).to.have.status(200);
-      })
-      .catch((err) => {
-        throw err;
+        done();
       });
   });
 
-  it("should error for a name with numeric characters");
-  it("should error for a name with special characters");
+  it("should 400 for a name with numeric characters", (done) => {
+    chai.request(server)
+      .get("/hello/ed1")
+      .end((err, res) => {
+        expect(res).to.have.status(400);
+        done();
+      });
+  });
+
+  it("should 400 for a name with special characters", (done) => {
+    chai.request(server)
+      .get("/hello/ed£")
+      .end((err, res) => {
+        expect(res).to.have.status(400);
+        done();
+      });
+  });
 });
