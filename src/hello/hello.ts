@@ -6,8 +6,8 @@ export const generateHello = (name: string): Welcome | Error => {
   return {
     message: `hello ${name}` 
   };
-}
+};
 
 interface Welcome {
-  message: string
+  message: string;
 }

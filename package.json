@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "npm run build -- -w",
+    "lint": "tslint --force src/** src/**/*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node dist/app.js",
     "serve:watch": "nodemon --watch dist dist/app.js",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@types/node": "^6.0.54",
     "@types/restify": "^2.0.35",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "tslint": "^4.2.0"
   }
 }
