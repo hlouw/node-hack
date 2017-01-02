@@ -3,7 +3,8 @@
         "outDir": "./built",
         "target": "es5",
         "strictNullChecks": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "lib": ["es2015"]
     },
     "include": [
         "./src/**/*",
